@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>PRIMEIRO PROGRAMA LUAN</title>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #000207;
+            color: rgb(253, 251, 251);
+        }
+
+        header {
+            background-color: #171717;
+            padding: 20px;
+            text-align: center;
+        }
+
+        header h1 {
+            color: #38bdf8;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 15px;
+        }
+
+        .inicio {
+            text-align: center;
+            padding: 100px 20px;
+        }
+
+        .inicio h2 {
+            font-size: 40px;
+        }
+
+        .inicio span {
+            color: #38bdf8;
+        }
+
+        .botao {
+            display: inline-block;
+            background-color: #f20202;
+            color: white;
+            padding: 15px 25px;
+            border-radius: 8px;
+            border: none;
+            text-decoration: none;
+            font-weight: bold;
+            margin-top: 20px;
+            cursor: pointer;
+        }
+
+        .sobre {
+            background-color: #000000;
+            padding: 60px 20px;
+            text-align: center;
+        }
+
+        .sobre p {
+            max-width: 600px;
+            margin: auto;
+            line-height: 1.6;
+        }
+
+        .perfil img {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+        #login {
+            text-align: center;
+            margin-top: 150px;
+            padding: 20px;
+        }
+
+        #login input {
+            display: block;
+            margin: 10px auto;
+            padding: 12px;
+            width: 250px;
+            max-width: 80%;
+            border-radius: 6px;
+            border: none;
+        }
+
+        #login button {
+            padding: 12px 25px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        #mensagem {
+            color: #ff3333;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: white;
+            color: black;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="login">
+
+        <h2>Acesso ao site</h2>
+
+        <input type="text" id="usuario" placeholder="Usuário">
+
+        <input type="password" id="senha" placeholder="Senha">
+
+        <button onclick="entrar()">Entrar</button>
+
+        <p id="mensagem"></p>
+
+    </div>
+
+
+    <div id="site" style="display: none;">
+
+        <header>
+
+            <h1>LUAN</h1>
+
+            <nav>
+                <a href="#" onclick="voltarInicio()">Início</a>
+                <a href="#sobre">Sobre mim</a>
+            </nav>
+
+        </header>
+
+
+        <section class="inicio">
+
+            <section class="perfil">
+
+                <img src="foto.jpeg" alt="Foto de perfil">
+
+                <h2>Luan Vinícius</h2>
+
+                <p>
+                    Estudante de Ciência de Dados | Analista de Dados
+                </p>
+
+            </section>
+
+
+            <section id="inicio">
+
+                <h2>
+                    Olá, eu sou <span>Luan</span>
+                </h2>
+
+                <p>
+                    Estudante de Ciência de Dados e apaixonado por tecnologia.
+                </p>
+
+                <button class="botao" onclick="mostrarJornada()">
+                    Conheça minha jornada 🚀
+                </button>
+
+            </section>
+
+
+            <section id="jornada" style="display: none;">
+
+                <h2>Minha Jornada 🚀</h2>
+
+                <p>
+                    Em janeiro, comprei meu notebook com o objetivo de investir
+                    nos meus estudos e no meu futuro.
+                </p>
+
+                <p>
+                    Em fevereiro, comecei minha faculdade de Ciência de Dados
+                    e neste mês finalmente terminei de pagar meu notebook.
+                </p>
+
+                <p>
+                    Ao longo dessa caminhada, cheguei a uma parte da faculdade
+                    que despertou bastante o meu interesse. Isso me motivou
+                    ainda mais a continuar aprendendo, desenvolvendo novas
+                    habilidades e construindo, passo a passo, minha carreira
+                    na área de dados.
+                </p>
+
+            </section>
+
+        </section>
+
+
+        <section class="sobre" id="sobre">
+
+            <h2>Sobre mim</h2>
+
+            <p>
+                Sou estudante de Ciência de Dados e estou aprendendo
+                programação, Python, GitHub, análise de dados e
+                desenvolvimento de projetos.
+
+                Logo, estou em busca de oportunidades para aplicar meus
+                conhecimentos e crescer profissionalmente na área de tecnologia.
+            </p>
+
+        </section>
+
+
+        <footer>
+
+            <p>
+                © 2026 - Luan Vinícius, PROGRAMA TA INDOOOOOO
+            </p>
+
+        </footer>
+
+    </div>
+
+
+    <script>
+
+        function mostrarJornada() {
+
+            document.getElementById("inicio").style.display = "none";
+
+            document.getElementById("jornada").style.display = "block";
+
+        }
+
+
+        function voltarInicio() {
+
+            document.getElementById("inicio").style.display = "block";
+
+            document.getElementById("jornada").style.display = "none";
+
+        }
+
+
+        function entrar() {
+
+            let usuario = document.getElementById("usuario").value;
+
+            let senha = document.getElementById("senha").value;
+
+
+            if (usuario === "Luanzin" && senha === "Luanv8686") {
+
+                document.getElementById("login").style.display = "none";
+
+                document.getElementById("site").style.display = "block";
+
+            } else {
+
+                document.getElementById("mensagem").innerText =
+                    "Usuário ou senha incorretos.";
+
+            }
+
+        }
+
+    </script>
+
+</body>
+
+</html>
